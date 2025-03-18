@@ -1,0 +1,350 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    /* Базовые размеры шрифтов */
+    --font-size-base: 16px;
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-md: 1rem;
+    /* 16px */
+    --font-size-lg: 1.125rem;
+    /* 18px */
+    --font-size-xl: 1.25rem;
+    /* 20px */
+    --font-size-2xl: 1.5rem;
+    /* 24px */
+    --font-size-3xl: 1.875rem;
+    /* 30px */
+    --font-size-4xl: 2.25rem;
+    /* 36px */
+
+    /* Высота строк */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    /* Вес шрифта */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Отступы */
+    --space-xs: 0.25rem;
+    /* 4px */
+    --space-sm: 0.5rem;
+    /* 8px */
+    --space-md: 1rem;
+    /* 16px */
+    --space-lg: 1.5rem;
+    /* 24px */
+    --space-xl: 2rem;
+    /* 32px */
+    --space-2xl: 3rem;
+    /* 48px */
+    --space-3xl: 4rem;
+    /* 64px */
+}
+
+/* Для мобильных устройств */
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 14px;
+        --font-size-2xl: 1.3rem;
+        --font-size-3xl: 1.6rem;
+        --font-size-4xl: 1.875rem;
+
+        --space-lg: 1.25rem;
+        --space-xl: 1.5rem;
+        --space-2xl: 2rem;
+        --space-3xl: 3rem;
+    }
+}
+
+/* Для планшетов */
+@media (min-width: 481px) and (max-width: 768px) {
+    :root {
+        --font-size-base: 15px;
+        --font-size-3xl: 1.75rem;
+        --font-size-4xl: 2rem;
+
+        --space-2xl: 2.5rem;
+        --space-3xl: 3.5rem;
+    }
+}
+
+/* Для больших экранов */
+@media (min-width: 1200px) {
+    :root {
+        --font-size-base: 18px;
+
+        --space-xl: 2.5rem;
+        --space-2xl: 3.5rem;
+        --space-3xl: 5rem;
+    }
+}
+
+/* Использование fluid typography для плавного изменения размера в зависимости от ширины экрана */
+@media (min-width: 768px) and (max-width: 1200px) {
+    :root {
+        --font-size-base: calc(16px + (18 - 16) * ((100vw - 768px) / (1200 - 768)));
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+}
+
+h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+h4 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+p {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-relaxed);
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+small {
+    font-size: var(--font-size-sm);
+}
+
+.text-xs {
+    font-size: var(--font-size-xs);
+}
+
+.text-sm {
+    font-size: var(--font-size-sm);
+}
+
+.text-md {
+    font-size: var(--font-size-md);
+}
+
+.text-lg {
+    font-size: var(--font-size-lg);
+}
+
+.text-xl {
+    font-size: var(--font-size-xl);
+}
+
+.text-2xl {
+    font-size: var(--font-size-2xl);
+}
+
+.text-3xl {
+    font-size: var(--font-size-3xl);
+}
+
+.text-4xl {
+    font-size: var(--font-size-4xl);
+}
+
+/* Утилитарные классы для отступов */
+.m-0 {
+    margin: 0;
+}
+
+.m-xs {
+    margin: var(--space-xs);
+}
+
+.m-sm {
+    margin: var(--space-sm);
+}
+
+.m-md {
+    margin: var(--space-md);
+}
+
+.m-lg {
+    margin: var(--space-lg);
+}
+
+.m-xl {
+    margin: var(--space-xl);
+}
+
+.mx-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mx-xs {
+    margin-left: var(--space-xs);
+    margin-right: var(--space-xs);
+}
+
+.mx-sm {
+    margin-left: var(--space-sm);
+    margin-right: var(--space-sm);
+}
+
+.mx-md {
+    margin-left: var(--space-md);
+    margin-right: var(--space-md);
+}
+
+.mx-lg {
+    margin-left: var(--space-lg);
+    margin-right: var(--space-lg);
+}
+
+.mx-xl {
+    margin-left: var(--space-xl);
+    margin-right: var(--space-xl);
+}
+
+.my-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.my-xs {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+
+.my-sm {
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.my-md {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.my-lg {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.my-xl {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-xs {
+    padding: var(--space-xs);
+}
+
+.p-sm {
+    padding: var(--space-sm);
+}
+
+.p-md {
+    padding: var(--space-md);
+}
+
+.p-lg {
+    padding: var(--space-lg);
+}
+
+.p-xl {
+    padding: var(--space-xl);
+}
+
+.px-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.px-xs {
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+}
+
+.px-sm {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+}
+
+.px-md {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+}
+
+.px-lg {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+}
+
+.px-xl {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+}
+
+.py-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.py-xs {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+}
+
+.py-sm {
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+}
+
+.py-md {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+}
+
+.py-lg {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+}
+
+.py-xl {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+* {
+    box-sizing: border-box;
+}

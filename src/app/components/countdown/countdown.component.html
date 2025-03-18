@@ -1,0 +1,49 @@
+<div class="countdown-container" #countdownContainer>
+    <h1>{{ i18nText().title }}</h1>
+
+    @defer {
+    <div *ngIf="secondsLeft() as deadline; else loadingOrError" class="countdown-display"
+        [appCountdownHighlight]="deadline.secondsLeft">
+        <span class="countdown-text">{{ message() }}</span>
+
+        @if (isAlmostDeadline()) {
+        <div class="alert-warning">
+            Deadline is approaching!
+        </div>
+        }
+
+        <button class="refresh-button" (click)="refreshDeadline()">
+            Refresh
+        </button>
+    </div>
+    } @loading {
+    <div class="loading-indicator">
+        <span>{{ i18nText().loading }}</span>
+        <div class="spinner"></div>
+    </div>
+    } @error {
+    <div class="error-message">
+        Failed to load countdown component
+    </div>
+    }
+
+    <ng-template #loadingOrError>
+        @if (loading()) {
+        <div class="loading-indicator">
+            <span>{{ i18nText().loading }}</span>
+            <div class="spinner"></div>
+        </div>
+        } @else if (error()) {
+        <div class="error-display">
+            <span>{{ i18nText().error }} {{ error() }}</span>
+            <button class="refresh-button" (click)="refreshDeadline()">
+                Try Again
+            </button>
+        </div>
+        } @else {
+        <div class="no-data">
+            No deadline data available
+        </div>
+        }
+    </ng-template>
+</div>
