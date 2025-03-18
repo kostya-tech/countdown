@@ -75,7 +75,6 @@ describe('HttpErrorInterceptor', () => {
     req.flush('Error message', { status: 500, statusText: 'Server Error' });
 
     expect(consoleErrorSpy).toHaveBeenCalled();
-    // Проверяем, что сообщение содержит нужные части, без жесткой привязки к формату
     const errorMessage = consoleErrorSpy.calls.argsFor(0)[0];
     expect(errorMessage).toContain('500');
     expect(errorMessage).toContain('Server Error');
@@ -88,7 +87,6 @@ describe('HttpErrorInterceptor', () => {
       next: () => fail('should have failed with network error'),
       error: (error) => {
         expect(error.statusCode).toBe(0);
-        // Меняем ожидаемое сообщение в соответствии с реализацией
         expect(error.message).toBe('Network error');
       }
     });
