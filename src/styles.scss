@@ -1,0 +1,14 @@
+@use "bootstrap/scss/bootstrap" as bootstrap;
+@use "bootstrap-icons/font/bootstrap-icons.css" as *;
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    background-color: var(--bs-body-bg);
+}
+
+* {
+    box-sizing: border-box;
+}
