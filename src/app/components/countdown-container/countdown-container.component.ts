@@ -36,6 +36,6 @@ export class CountdownContainerComponent {
             this.secondsLeft.update(seconds => Math.max((seconds ?? 0) - 1, 0));
         });
 
-        onCleanup(() => timerSub.unsubscribe()); // автоматически очищаем
+        onCleanup(() => timerSub.unsubscribe());
     });
 } 
